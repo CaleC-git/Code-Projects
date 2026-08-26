@@ -1,3 +1,5 @@
+# return code
+
 def ReLU(number):
     if number > 0:
         return number
