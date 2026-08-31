@@ -1,10 +1,10 @@
-class Author:
+class Author: # creates the class 
     def __init__(self, name):
         self.name = name
-        self.books = []
+        self.books = [] # makes an empty list for the class
 
     def publish(self, title):
-        self.books.append(title)
+        self.books.append(title) # adds the book title to class list
 
     def __str__(self):
         return self.name
