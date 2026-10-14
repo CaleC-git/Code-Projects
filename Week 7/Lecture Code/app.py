@@ -11,8 +11,13 @@ def homepage(): # Opens app to a homepage
 
 @app.route("/submit_feedback", methods=["POST"])
 def submit_feedback(): # This'll read data and images from the form as well as save to the DB
+    # reading the form
     feedback = request.form.to_dict()
     print(feedback)
+
+    # saving the data to DB
+    db.save_feedback(feedback)
+    
 
     return render_template("thank_you.html")
 
