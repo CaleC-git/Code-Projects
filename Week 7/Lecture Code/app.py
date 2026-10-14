@@ -6,8 +6,15 @@ import db
 app = Flask(__name__)
 
 @app.route("/")
-def homepage():
+def homepage(): # Opens app to a homepage
     return render_template("feedback_form.html")
+
+@app.route("/submit_feedback", methods=["POST"])
+def submit_feedback(): # This'll read data and images from the form as well as save to the DB
+    feedback = request.form.to_dict()
+    print(feedback)
+
+    return render_template("thank_you.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
